@@ -1,0 +1,26 @@
+import java.io.*;
+
+class PRIME1{
+    public static void main(String[] args) throws IOException {
+	int c;
+	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+	c = Integer.parseInt(in.readLine());
+	for (int i=0;i<c;i++){
+	    String str = in.readLine();
+	    String[] strs = str.split(" ");
+	    int m = Integer.parseInt(strs[0]);
+	    int n = Integer.parseInt(strs[1]);
+	    //System.out.println(m);
+	    //System.out.println(n);
+	    for (int j=m;j<n+1;j++){
+		int d = 1;
+		for (int k=2;k<Math.pow(j,0.5)+1;k++){
+		    //System.out.println(k);
+		    d = d * (j%k);
+		}
+		//System.out.println(d);
+		if (d != 0) System.out.println(j);
+	    }
+	}
+    }
+}

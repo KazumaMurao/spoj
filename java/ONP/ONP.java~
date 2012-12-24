@@ -1,0 +1,6 @@
+import 
+
+public static void main(){
+    int i = Test();
+    System.out.println(i);
+}

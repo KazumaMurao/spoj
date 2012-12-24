@@ -1,0 +1,10 @@
+class TEST{
+    public static void main(){
+	int c;
+	while (true){
+	    c = System.in.read();
+	    if (c==42) break;
+	    System.out.println(c);
+	}
+    }
+}
