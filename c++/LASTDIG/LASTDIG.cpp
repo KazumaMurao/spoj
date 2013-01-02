@@ -19,7 +19,7 @@ void solve(int A, int B) {
     cout << 1 << endl;
     return;
   }
-  cout << resarray[A%10][B%4-1] << endl;
+  cout << resarray[A%10][(B-1)%4] << endl;
 }
 
 int main() {
