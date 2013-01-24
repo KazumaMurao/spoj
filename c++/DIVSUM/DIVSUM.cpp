@@ -1,18 +1,30 @@
 #include <iostream>
+#define MAXNUM 200
 
 using namespace std;
 
 void solve(int N) {
-  int sum = 0;
-  int maxnum = 708;
-  for (int i=1; i<maxnum; i++) {
-    if (i == N) break;
-
-    if (N%i == 0) {
-      sum = sum + i;
-    }
-  }
-  cout << sum << endl;
+	int tmp_N = N;
+	int divisor = 2;
+	int product = 1;
+	int tmp_sm = 1;
+	int sm = 1;
+	int res;
+	while (tmp_N > 1) {
+		if (tmp_N%divisor == 0) {
+			product = product * divisor;
+			tmp_sm = tmp_sm + product;
+			tmp_N = tmp_N / divisor;
+		} else {
+			sm = sm * tmp_sm;
+			product = 1;
+			tmp_sm = 1;
+			divisor = divisor + 1;
+		}
+	}
+	sm = sm * tmp_sm;
+	res = sm - N;
+	cout << res << endl;
 }
 
 int main() {
